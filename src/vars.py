@@ -8,8 +8,8 @@ PLAYABLE_ARENA = (35, 75, 474, 700)
 
 TOWER_HEALTHBARS = [
     (103, 138, 157, 139),  # top-left tower
-    (103, 566, 157, 567),  # bottom-left tower
-    (374, 566, 426, 567),  # bottom-right tower
+    (103, 567, 157, 568),  # bottom-left tower
+    (374, 567, 426, 568),  # bottom-right tower
     (374, 138, 426, 139)   # top-right tower
 ]
 

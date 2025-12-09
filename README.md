@@ -30,11 +30,13 @@ If you are running on a different machine, you must re-capture these ROIs.
 
 ### 2. Verify Display Alignment
 
-Run: python3 src/setup_test.py
+Run: python3 src/setup_test.py {L/R}
 
-This script captures the ROI and displays a screenshot.
+This script captures the left or right ROI and displays a screenshot.
 
-Compare the output to the reference image in this repository.
+Compare the output to the reference image stored in data/readme_img/setup_test_output.
+![ideal setup](./data/readme_img/setup_test_output.png)
+
 If the captured screenshot does not match the expected region:
 
 - reposition/resize the BlueStacks window
@@ -46,7 +48,7 @@ Once the screenshot matches, the perception pipeline (YOLO + OCR + pixel samplin
 
 1. Start a Clash Royale match manually.  
 2. Ensure the BlueStacks window is positioned exactly as required and not covered.  
-3. Run: python3 src/infer.py
+3. Run: python3 src/infer.py {L/R} {L/R} 
 
 The agent will begin reading the screen and selecting actions based on its trained PPO policy.
 During inference, only one agent is active, and no gameplay data is recorded.
@@ -59,7 +61,7 @@ Self-play requires:
 3. Both windows positioned EXACTLY where the ROIs expect them to be
 
 Once both windows are positioned:
-1. Navigate both accounts to the Friendly Battle screen.
+1. Navigate both accounts to the Friends screen.
 2. Adjust the NEXT_EPISODE and TOTAL_EPISODES variables in src/collect_data.py
 3. Run python3 src/collect_data.py
 
@@ -68,8 +70,9 @@ The script will begin generating self-play episodes and storing them in the buff
 **Warning:**
 Due to imperfect OCR detection and timing differences, the agent may occasionally misdetect the “game over” screen, attempt to play a card after the match ends, or click outside intended regions. This behavior messes up the iterative behavior of the script, as the model is no longer on the expected screen. Therefore, self-play collection may require periodic supervision, and likely will not function for long recording sessions.
 
-### 5. Testing the bot (without running Clash Royale)
-Because this process requires lots of manual setup, a inference test with pre-recorded screenshots is provided in src/test_infer_on_image.py. This test should provide more detail into how the project pipeline works. 
+## Testing the bot (without running Clash Royale)
+Because this process requires lots of manual setup, a inference test is provided in src/test_infer_on_image.py. This test uses pre-recorded screenshots stored in data/test, and can be run with python3 src/test_infer_on_image.py {i} where i is in [0, 9].
+This test will provide more detail into how the project pipeline works. 
 
 ## Videos
 

@@ -57,7 +57,7 @@ This step is critical; YOLO and pixel-based detection depend on exact alignment.
 
 ## 5. Running the Bot
 
-### 6.1 Inference
+### 5.1 Inference
 Start a match manually in Clash Royale, then run python src/infer.py.
 
 The agent will:
@@ -67,7 +67,7 @@ The agent will:
 - Execute mouse clicks automatically
 No gameplay data is recorded during inference.
 
-### 6.2 Collecting Self-play data (optional)
+### 5.2 Collecting Self-play data (optional)
 Requires:
 - Two emulator windows
 - Two Clash Royale accounts logged in
@@ -85,7 +85,7 @@ Episodes will be saved into: buffers/ep_*.json
 OCR sometimes misreads the “game over” screen.
 During long unattended runs, the agent may misclick after the match ends.
 
-### 7. Testing without runnning Clash Royale (for graders)
+### 6. Testing without runnning Clash Royale (for graders)
 To allow testing on systems without an emulator or the actual game:
 1. Test screenshots are stored in data/test
 2. run python src/test_infer_on_image.py {image_number}
@@ -103,7 +103,7 @@ This verifies:
 - PPO inference pipeline
 without needing to run the real game.
 
-### 8. Training the PPO model
+### 7. Training the PPO model
 After collecting episodes, run python src/train.py
 This script:
 - Loads your replay buffers
