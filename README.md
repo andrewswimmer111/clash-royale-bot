@@ -68,6 +68,9 @@ The script will begin generating self-play episodes and storing them in the buff
 **Warning:**
 Due to imperfect OCR detection and timing differences, the agent may occasionally misdetect the “game over” screen, attempt to play a card after the match ends, or click outside intended regions. This behavior messes up the iterative behavior of the script, as the model is no longer on the expected screen. Therefore, self-play collection may require periodic supervision, and likely will not function for long recording sessions.
 
+### 5. Testing the bot (without running Clash Royale)
+Because this process requires lots of manual setup, a inference test with pre-recorded screenshots is provided in src/test_infer_on_image.py. This test should provide more detail into how the project pipeline works. 
+
 ## Videos
 
 ## Evaluation

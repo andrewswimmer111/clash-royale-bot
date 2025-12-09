@@ -14,7 +14,7 @@ import mss
 import threading
 
 
-VISION_MODEL = YOLO("weights/vision.pt")
+VISION_MODEL = YOLO("models/vision.pt")
 OCR_ENGINE = easyocr.Reader(['en'], gpu=False)
 
 # Allows program to interact with the game
