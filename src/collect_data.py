@@ -16,11 +16,11 @@ from takeAction import get_action_mask
 from getState import createFinalState
 
 
-NEXT_EPISODE = 59
+NEXT_EPISODE = 60
 
 TURN_TIME = 0.25
 WAIT_AFTER_TURN = 0
-TOTAL_EPISODES = 60
+TOTAL_EPISODES = 70
 
 BUFFER_DIR = "buffers"
 CHECKPOINT_DIR = "checkpoints"

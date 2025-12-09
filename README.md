@@ -75,6 +75,8 @@ Because this process requires lots of manual setup, a inference test is provided
 This test will provide more detail into how the project pipeline works. 
 
 ## Videos
+Demo: https://youtu.be/uchb4mBnUsE
+Technical Walkthrough: https://youtu.be/Psq8py2OvZc
 
 ## Evaluation
 

@@ -96,6 +96,10 @@ class ClashRoyaleEnv(gym.Env):
 
     def _compute_reward(self, prev_state, next_state):
 
+        # Beause we want to win, winning reward takes up most (+50)
+        # but we also want to reward good mechanics, so holding elixir, not leaking, damaging towers
+        # Rewards are not based off troops bc of the unreliability of YOLO accuracy
+        
         reward = 0.0
 
         if prev_state is not None:
@@ -115,7 +119,8 @@ class ClashRoyaleEnv(gym.Env):
             prev_elixir = float(prev_state[1])
             next_elixir = float(next_state[1])
 
-            reward += 0.01 * (prev_elixir - next_elixir)
+            # Gain slight reward for getting more elixir
+            reward += 0.01 * (next_elixir - prev_elixir)
 
             if prev_elixir == 10 and next_elixir == 10:
                 reward -= 0.05
@@ -158,7 +163,7 @@ class ClashRoyaleEnv(gym.Env):
 
         time.sleep(2)
 
-# Allows imported ppo agent to train
+# Allows imported ppo agent to train since step can't be called like that in ClashEnv
 class ReplayEnv(gym.Env):
     def __init__(self, transitions):
         super().__init__()

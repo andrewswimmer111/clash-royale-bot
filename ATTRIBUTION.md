@@ -88,6 +88,11 @@ This project relies on the following open-source libraries:
 - Dataset links:
     - Original: https://app.roboflow.com/andrewswimmer111/hog-2-6-zfi09/browse
     - Fine-tuning: https://app.roboflow.com/andrewswimmer111/hog-2-6-new-arena-ey3ta/browse
+- Dataset documentation:
+    - I took screenshots every 1 second while playing a few games of clash with my friend.
+    - Uploaded the data into roboflow and manually labeled some
+    - Trained a vision model in roboflow to assist with labelling
+    - Went through and confirmed/corrected all remaining images
 
 ### **YOLO Training Augmentations**
 Provided by the Ultralytics training pipeline.
